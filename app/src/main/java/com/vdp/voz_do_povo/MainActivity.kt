@@ -7,8 +7,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.vdp.shared.ApiClient
+import com.vdp.shared.utils.extractValue
 import kotlinx.coroutines.launch
-
 class MainActivity : AppCompatActivity() {
 
     @SuppressLint("MissingInflatedId")
@@ -20,9 +20,13 @@ class MainActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
             try {
-                val jsonObject = ApiClient.api.getAnswer()
-                textView.text = jsonObject.toString()
-
+                val jsonElement = ApiClient.api.getAnswer()
+                val username: String? = jsonElement.extractValue("userRequest", "name")
+                if (username != null) {
+                    textView.text = "Olá, $username!"
+                } else {
+                    textView.text = "Nome de usuário não encontrado"
+                }
             } catch (e: Exception) {
                 Log.e("ApiError", e.toString())
                 textView.text = "Ocorreu um erro: ${e.message}"
