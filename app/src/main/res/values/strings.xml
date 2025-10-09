@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Voz do povo</string>
+        <string-array name="themes_array">
+            <item>Saneamento Básico</item>
+            <item>Infraestrutura viária</item>
+            <item>Educação</item>
+            <item>Iluminação pública</item>
+            <item>Energia elétrica</item>
+            <item>Segurança pública</item>
+            <item>Áreas verdes e lazer</item>
+
+        </string-array>
+</resources>

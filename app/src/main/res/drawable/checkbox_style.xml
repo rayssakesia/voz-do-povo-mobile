@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style name="MyCustomCheckboxStyle" parent="Widget.AppCompat.CompoundButton.CheckBox">
+    <item name="android:colorControlNormal">@color/your_unchecked_border_color</item>
+    <item name="android:colorAccent">@color/your_checked_fill_color</item>
+</style>
